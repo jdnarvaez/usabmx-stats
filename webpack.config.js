@@ -64,7 +64,7 @@ const config = {
   entry : entry,
   mode : isDevServer ? 'development' : 'production',
   output: {
-    publicPath: '/jdnarvaez/usabmx-stats/',
+    publicPath: '/usabmx-stats/',
     // publicPath: '/',
 		path: path.join(__dirname, 'docs'),
 		filename: '[name].js'
