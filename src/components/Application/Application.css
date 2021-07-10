@@ -1,0 +1,64 @@
+html, body {
+  background: black;
+  color: white;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+#app .table {
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+#app .table .header, #app .table .row {
+  display: flex;
+}
+
+#app .table .header div, #app .table .row div {
+  flex: 1;
+  padding: 0.2rem 0.4em;
+}
+
+#app .table .header {
+  font-size: 25px;
+  /* padding-bottom: 10px; */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+#app .table .header div {
+  cursor: pointer;
+  letter-spacing: -1px;
+}
+
+#app .table .row {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.app-header {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  padding-top: 10px;
+}
+
+.app-header .app-title {
+  font-size: 50px;
+  letter-spacing: -2px;
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+}
