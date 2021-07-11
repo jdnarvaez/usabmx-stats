@@ -38862,149 +38862,6 @@
     "podiumPercentage": "0.00"
   },
   {
-    "id": "eb94db18-8d44-4383-ad08-beb706593de5",
-    "firstName": "Teagan",
-    "lastName": "O'Keeffe",
-    "name": "Teagan O'Keeffe",
-    "podiums": [],
-    "wins": [],
-    "mains": [
-      {
-        "event": {
-          "name": "Sooner",
-          "year": 2010
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Gator",
-          "year": 2010
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Gator",
-          "year": 2010
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Super",
-          "year": 2013
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Unknown",
-          "year": 2013
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Unknown",
-          "year": 2013
-        },
-        "day": 3
-      },
-      {
-        "event": {
-          "name": "Gator",
-          "year": 2014
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Gator",
-          "year": 2014
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Super",
-          "year": 2014
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Super",
-          "year": 2014
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Spring",
-          "year": 2014
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Spring",
-          "year": 2014
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Super",
-          "year": 2015
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Stars",
-          "year": 2015
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Stars",
-          "year": 2015
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Unknown",
-          "year": 2015
-        },
-        "day": null
-      },
-      {
-        "event": {
-          "name": "Music City",
-          "year": 2016
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Unknown",
-          "year": 2016
-        },
-        "day": 1
-      }
-    ],
-    "yearsRaced": {},
-    "numberOfWins": 0,
-    "numberOfPodiums": 0,
-    "numberOfMains": 18,
-    "seasonsRaced": 6,
-    "winPercentage": "0.00",
-    "podiumPercentage": "0.00"
-  },
-  {
     "id": "c57a9a23-97d5-4005-a149-4c8d8dbbd4f4",
     "firstName": "Ashley",
     "lastName": "Lynch",
@@ -40035,10 +39892,10 @@
     "yearsRaced": {},
     "numberOfWins": 0,
     "numberOfPodiums": 1,
-    "numberOfMains": 0,
+    "numberOfMains": 18,
     "seasonsRaced": 0,
-    "winPercentage": "NaN",
-    "podiumPercentage": "Infinity"
+    "winPercentage": 0,
+    "podiumPercentage": "5.55"
   },
   {
     "id": "52a07e54-9c15-4b0f-88e9-10fd4d9bbb47",
@@ -41145,79 +41002,6 @@
     "podiumPercentage": "60.00"
   },
   {
-    "id": "b577d28c-a195-4fed-9810-52a01cf84f4b",
-    "firstName": "Elke",
-    "lastName": "Vanhoof",
-    "name": "Elke Vanhoof",
-    "podiums": [],
-    "wins": [],
-    "mains": [
-      {
-        "event": {
-          "name": "ROC",
-          "year": 2013
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Grands",
-          "year": 2013
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Silver Dollar",
-          "year": 2014
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Silver Dollar",
-          "year": 2014
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Winters",
-          "year": 2015
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Winters",
-          "year": 2015
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Winters",
-          "year": 2016
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Winters",
-          "year": 2016
-        },
-        "day": 2
-      }
-    ],
-    "yearsRaced": {},
-    "numberOfWins": 0,
-    "numberOfPodiums": 0,
-    "numberOfMains": 8,
-    "seasonsRaced": 3,
-    "winPercentage": "0.00",
-    "podiumPercentage": "0.00"
-  },
-  {
     "id": "376803f2-a6b0-4400-853f-df9c22d062e0",
     "firstName": "Drew",
     "lastName": "Michielsen",
@@ -41903,9 +41687,9 @@
     "yearsRaced": {},
     "numberOfWins": 0,
     "numberOfPodiums": 2,
-    "numberOfMains": 0,
+    "numberOfMains": 8,
     "seasonsRaced": 1,
-    "winPercentage": "NaN",
-    "podiumPercentage": "Infinity"
+    "winPercentage": 0,
+    "podiumPercentage": "25.00"
   }
 ]
