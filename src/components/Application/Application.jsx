@@ -43,6 +43,8 @@ class Rider {
     this.numberOfPodiums = this.podiums.length;
     this.numberOfMains = this.mains.length;
     this.seasonsRaced = this.careerLength();
+    this.winPercentage = ((this.numberOfWins / this.numberOfMains) * 100).toFixed(2);
+    this.podiumPercentage = ((this.numberOfPodiums / this.numberOfMains) * 100).toFixed(2);
   }
 
   careerLength = () => {
@@ -96,13 +98,15 @@ class MainEventResult {
   }
 }
 
-const Row = ({ name, numberOfWins, numberOfPodiums, numberOfMains, seasonsRaced }) => (
+const Row = ({ name, numberOfWins, numberOfPodiums, numberOfMains, seasonsRaced, winPercentage, podiumPercentage }) => (
   <div className="row">
     <div>{name}</div>
     <div className="center" >{numberOfWins}</div>
     <div className="center" >{numberOfPodiums}</div>
     <div className="center" >{numberOfMains}</div>
     <div className="center" >{seasonsRaced}</div>
+    <div className="center" >{`${winPercentage}%`}</div>
+    <div className="center" >{`${podiumPercentage}%`}</div>
   </div>
 );
 
@@ -141,6 +145,8 @@ class Table extends React.Component {
               <div className="center bold-text" onClick={() => this.sortBy('numberOfPodiums')}>Podiums</div>
               <div className="center bold-text" onClick={() => this.sortBy('numberOfMains')}>Main Events</div>
               <div className="center bold-text" onClick={() => this.sortBy('seasonsRaced')}>Seasons Raced</div>
+              <div className="center bold-text" onClick={() => this.sortBy('winPercentage')}>Win Ratio</div>
+              <div className="center bold-text" onClick={() => this.sortBy('podiumPercentage')}>Podium Ratio</div>
             </div>
           </div>
         </Sticky>
