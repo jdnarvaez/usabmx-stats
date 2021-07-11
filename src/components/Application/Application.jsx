@@ -65,7 +65,7 @@ class Rider {
     this.podiums.forEach(processResult);
     this.mains.forEach(processResult);
 
-    return end - start;
+    return end - start + 1;
   }
 }
 
