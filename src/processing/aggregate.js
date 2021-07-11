@@ -45,23 +45,23 @@ function computeStats(rider) {
   rider.podiumPercentage = ((rider.numberOfPodiums / rider.numberOfMains) * 100).toFixed(2);
 }
 
-// var workbook = XLSX.readFile(path.join(process.cwd(), 'data', 'Women_Pro_Stats_gmo.xlsx'));
-
-// console.log(workbook.Sheets);
-
 const riders = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'data', 'riders.json'), 'utf8'));
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function getRider(name) {
+function getRider(name, autoCreate = true) {
   var rider = riders.find(r => r.name.toLowerCase() === name.toLowerCase());
 
-  if (!rider) {
-    console.log('new rider')
+  if (!rider && autoCreate) {
+    console.log(`new rider ${name}`)
+
+    const normalizedName = name.split(' ').map(p => capitalizeFirstLetter(p.trim().toLowerCase())).join(' ');
+    // parts.forEach(p => capitalizeFirstLetter(p.trim().toLowerCase()));
+
     rider = {
-      name: `${capitalizeFirstLetter(name.split(' ')[0].toLowerCase())} ${capitalizeFirstLetter(name.split(' ')[1].toLowerCase())}`,
+      name: normalizedName,
       podiums: [],
       wins: [],
       mains: [],
@@ -97,7 +97,10 @@ function parse(dir, file) {
         for (var idx = 0; idx < results.data.length; idx++) {
           const row = results.data[idx];
 
-          if (row[0].indexOf('Women Elite') > -1) {
+          const proOpen = row[0].indexOf('Pro Open') > -1;
+          const womens = row[0].indexOf('Women Elite') > -1 || row[0].indexOf('Women Pro') > -1;
+
+          if (proOpen || womens) {
             found = true;
 
             idx++;
@@ -106,7 +109,17 @@ function parse(dir, file) {
             while (riderRow[1] !== '') {
               try {
                 const name = riderRow[2].split(',')[0];
-                const rider = getRider(name);
+                const rider = getRider(name, !proOpen);
+
+                if (!rider) {
+                  riderRow = results.data[idx++];
+                  continue;
+                }
+
+                if (proOpen) {
+                  console.log(`Adding pro open result for ${rider.name}`)
+                }
+
                 const position = parseInt(riderRow[1]);
 
                 if (position === 1) {
@@ -164,58 +177,4 @@ const results = Promise.all(fs.readdirSync(path.join(process.cwd(), 'data', 'res
 results.then(res => {
   riders.forEach(r => computeStats(r));
   fs.writeFileSync(path.join(process.cwd(), 'data', 'riders_2.json'), JSON.stringify(riders));
-})
-
-// console.log(riders.length)
-
-// Papa.parse(csv, {
-// 	complete: function(results) {
-//     for (var idx = 0; idx < results.data.length; idx++) {
-//       const row = results.data[idx];
-//
-//       if (row[0].indexOf('Women Elite') > -1) {
-//         idx++;
-//         riderRow = results.data[idx++];
-//
-//         while (riderRow[1] !== '') {
-//           const name = riderRow[2].split(',')[0];
-//           const rider = getRider(name);
-//           const position = parseInt(riderRow[1]);
-//
-//           if (position === 1) {
-//             rider.wins.push({
-//               event
-//             });
-//
-//             rider.podiums.push({
-//               event,
-//               day,
-//               position
-//             });
-//
-//           } else if (position === 2 || position === 3) {
-//             rider.podiums.push({
-//               event,
-//               day,
-//               position
-//             })
-//           }
-//
-//           rider.mains.push({
-//             event,
-//             day,
-//             position
-//           })
-//
-//           console.log(rider)
-//
-//           riderRow = results.data[idx++];
-//         }
-//
-//         break;
-//       }
-//     }
-//
-//     console.log(riders.length)
-// 	}
-// });
+});
