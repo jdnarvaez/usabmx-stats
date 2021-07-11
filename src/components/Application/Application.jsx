@@ -162,7 +162,7 @@ export default class Application extends React.Component {
   constructor(props) {
     super(props);
 
-    const riders = require('../../../data/riders.json');
+    const riders = require('../../../data/riders_2.json');
     riders.sort((a, b) => b.wins.length - a.wins.length);
 
     riders.forEach(r => r.seasonsRaced++)
