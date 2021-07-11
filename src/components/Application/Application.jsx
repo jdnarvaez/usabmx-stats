@@ -161,10 +161,18 @@ class Table extends React.Component {
 export default class Application extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+
+    const riders = require('../../../data/riders.json');
+    riders.sort((a, b) => b.wins.length - a.wins.length)
+
+    this.state = { riders };
   }
 
   componentDidMount() {
+    if (this.state.riders) {
+      return;
+    }
+
     fetch(stats).then(response => response.arrayBuffer()).then(data => {
       const workbook = XLSX.read(data, { type: 'array' });
 
@@ -193,10 +201,11 @@ export default class Application extends React.Component {
         const searchTokens = name.split(' ');
 
         var rider = riders.find(r => {
-          const riderTokens = r.name.split(' ');
-
-          const notFound = searchTokens.filter(token => riderTokens.indexOf(token) < 0);
-          return notFound.length <= 1;
+          // const riderTokens = r.name.split(' ');
+          //
+          // const notFound = searchTokens.filter(token => riderTokens.indexOf(token) < 0);
+          // return notFound.length <= 1;
+          return r.name.trim() === name;
         });
 
         if (!rider) {
@@ -359,6 +368,9 @@ export default class Application extends React.Component {
 
       riders.sort((a, b) => b.wins.length - a.wins.length)
       riders.forEach(r => r.computeStats())
+
+      console.log(JSON.stringify(riders))
+
       this.setState({ riders })
     })
   }
