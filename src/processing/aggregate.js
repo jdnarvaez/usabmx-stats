@@ -31,11 +31,11 @@ function computeStats(rider) {
   rider.numberOfPodiums = rider.podiums.length;
 
   if (rider.numberOfMains !== undefined) {
-    if (rider.numberOfMains > rider.mains.length) {
-      rider.numberOfMains = rider.numberOfMains;
-    } else {
-      rider.numberOfMains += rider.mains.length;
-    }
+    // if (rider.numberOfMains > rider.mains.length) {
+    //   rider.numberOfMains = rider.numberOfMains;
+    // } else {
+    //   // rider.numberOfMains += rider.mains.length;
+    // }
   } else {
     rider.numberOfMains = rider.mains.length;
   }
