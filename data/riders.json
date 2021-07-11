@@ -26062,121 +26062,6 @@
     "podiumPercentage": "18.18"
   },
   {
-    "id": "1d0ea61f-861b-4bb7-8dd3-4ac55ac5f400",
-    "firstName": "Darcey",
-    "lastName": "Cobb",
-    "name": "Darcey Cobb",
-    "podiums": [],
-    "wins": [],
-    "mains": [
-      {
-        "event": {
-          "name": "Winters",
-          "year": 1998
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Spring",
-          "year": 1998
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Spring",
-          "year": 1998
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "World Cup",
-          "year": 1998
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "World Cup",
-          "year": 1998
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "So Cal",
-          "year": 1998
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Black Jack",
-          "year": 1998
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Black Jack",
-          "year": 1998
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Falls",
-          "year": 1998
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "World Cup",
-          "year": 1999
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "World Cup",
-          "year": 1999
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Black Jack",
-          "year": 1999
-        },
-        "day": 1
-      },
-      {
-        "event": {
-          "name": "Black Jack",
-          "year": 1999
-        },
-        "day": 2
-      },
-      {
-        "event": {
-          "name": "Falls",
-          "year": 1999
-        },
-        "day": 1
-      }
-    ],
-    "yearsRaced": {},
-    "numberOfWins": 0,
-    "numberOfPodiums": 0,
-    "numberOfMains": 14,
-    "seasonsRaced": 1,
-    "winPercentage": "0.00",
-    "podiumPercentage": "0.00"
-  },
-  {
     "id": "9186888e-ffa7-4d1e-84b5-e750710de90b",
     "firstName": "Brittney",
     "lastName": "Haar",
@@ -27500,10 +27385,10 @@
     "yearsRaced": {},
     "numberOfWins": 0,
     "numberOfPodiums": 3,
-    "numberOfMains": 0,
+    "numberOfMains": 14,
     "seasonsRaced": 0,
-    "winPercentage": "NaN",
-    "podiumPercentage": "Infinity"
+    "winPercentage": 0,
+    "podiumPercentage": "21.43"
   },
   {
     "id": "3d53b1dc-0688-47a0-94b2-c00f08c1d6cd",
