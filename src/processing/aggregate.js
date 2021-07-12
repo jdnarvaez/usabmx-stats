@@ -176,5 +176,5 @@ const results = Promise.all(fs.readdirSync(path.join(process.cwd(), 'data', 'res
 
 results.then(res => {
   riders.forEach(r => computeStats(r));
-  fs.writeFileSync(path.join(process.cwd(), 'data', 'riders_2.json'), JSON.stringify(riders));
+  fs.writeFileSync(path.join(process.cwd(), 'data', 'riders_3.json'), JSON.stringify(riders));
 });

@@ -2,6 +2,7 @@
 import React, { Suspense, useRef, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 import Sticky from 'react-sticky-el';
+import { FaSortUp, FaSortDown } from 'react-icons/fa';
 
 import XLSX from 'xlsx';
 import Fuse from 'fuse.js';
@@ -115,6 +116,8 @@ class Table extends React.Component {
     super(props);
 
     this.state = {
+      sortColumn: 'numberOfWins',
+      descending: true,
       data: [...props.data],
     };
   }
@@ -128,12 +131,21 @@ class Table extends React.Component {
   }
 
   sortBy = (key) => {
+    const { sortColumn } = this.state;
+    const descending = key === sortColumn ? !this.state.descending : false;
     let arrayCopy = [...this.props.data];
     arrayCopy.sort(this.compareBy(key));
-    this.setState({ data: arrayCopy });
+
+    if (descending) {
+      arrayCopy.reverse();
+    }
+
+    this.setState({ sortColumn: key, descending, data: arrayCopy });
   }
 
   render() {
+    const { sortColumn, descending } = this.state;
+
     return (
       <div className="table">
         <Sticky>
@@ -141,12 +153,30 @@ class Table extends React.Component {
             <div className="app-title extra-bold-text">USABMX Women's Pro Rankings</div>
             <div className="header">
               <div className="bold-text" onClick={() => this.sortBy('name')}>Name</div>
-              <div className="center bold-text" onClick={() => this.sortBy('numberOfWins')}>Wins</div>
-              <div className="center bold-text" onClick={() => this.sortBy('numberOfPodiums')}>Podiums</div>
-              <div className="center bold-text" onClick={() => this.sortBy('numberOfMains')}>Main Events</div>
-              <div className="center bold-text" onClick={() => this.sortBy('seasonsRaced')}>Seasons Raced</div>
-              <div className="center bold-text" onClick={() => this.sortBy('winPercentage')}>Win Ratio</div>
-              <div className="center bold-text" onClick={() => this.sortBy('podiumPercentage')}>Podium Ratio</div>
+              <div className="header-title center bold-text" onClick={() => this.sortBy('numberOfWins')}>
+                <div className={`header-text${sortColumn === 'numberOfWins' ? '-sorted' : ''}`}>Wins</div>
+                {sortColumn === 'numberOfWins' && <div className="sort-button">{descending ? <FaSortDown /> : <FaSortUp />}</div>}
+              </div>
+              <div className="header-title center bold-text" onClick={() => this.sortBy('numberOfPodiums')}>
+                <div className={`header-text${sortColumn === 'numberOfPodiums' ? '-sorted' : ''}`}>Podiums</div>
+                {sortColumn === 'numberOfPodiums' && <div className="sort-button">{descending ? <FaSortDown /> : <FaSortUp />}</div>}
+              </div>
+              <div className="header-title center bold-text" onClick={() => this.sortBy('numberOfMains')}>
+                <div className={`header-text${sortColumn === 'numberOfMains' ? '-sorted' : ''}`}>Main Events</div>
+                {sortColumn === 'numberOfMains' && <div className="sort-button">{descending ? <FaSortDown /> : <FaSortUp />}</div>}
+              </div>
+              <div className="header-title center bold-text" onClick={() => this.sortBy('seasonsRaced')}>
+                <div className={`header-text${sortColumn === 'seasonsRaced' ? '-sorted' : ''}`}>Seasons Raced</div>
+                {sortColumn === 'seasonsRaced' && <div className="sort-button">{descending ? <FaSortDown /> : <FaSortUp />}</div>}
+              </div>
+              <div className="header-title center bold-text" onClick={() => this.sortBy('winPercentage')}>
+                <div className={`header-text${sortColumn === 'winPercentage' ? '-sorted' : ''}`}>Win Ratio</div>
+                {sortColumn === 'winPercentage' && <div className="sort-button">{descending ? <FaSortDown /> : <FaSortUp />}</div>}
+              </div>
+              <div className="header-title center bold-text" onClick={() => this.sortBy('podiumPercentage')}>
+                <div className={`header-text${sortColumn === 'podiumPercentage' ? '-sorted' : ''}`}>Podium Ratio</div>
+                {sortColumn === 'podiumPercentage' && <div className="sort-button">{descending ? <FaSortDown /> : <FaSortUp />}</div>}
+              </div>
             </div>
           </div>
         </Sticky>
@@ -161,12 +191,8 @@ class Table extends React.Component {
 export default class Application extends React.Component {
   constructor(props) {
     super(props);
-
-    const riders = require('../../../data/riders_2.json');
-    riders.sort((a, b) => b.wins.length - a.wins.length);
-
-    riders.forEach(r => r.seasonsRaced++)
-
+    const riders = require('../../../data/riders_3.json');
+    riders.sort((a, b) => b.numberOfWins - a.numberOfWins);
     this.state = { riders };
   }
 
@@ -238,6 +264,12 @@ export default class Application extends React.Component {
             const e = new Event({ year, name: event });
             allEvents.push(e);
             events.push(e);
+
+            // Some sheets have an extra 'Wins' column
+            if (event.toLowerCase() === 'grands') {
+              break;
+            }
+
             event = rows[3][eventIdx++];
           }
 
@@ -370,9 +402,6 @@ export default class Application extends React.Component {
 
       riders.sort((a, b) => b.wins.length - a.wins.length)
       riders.forEach(r => r.computeStats())
-
-      console.log(JSON.stringify(riders))
-
       this.setState({ riders })
     })
   }

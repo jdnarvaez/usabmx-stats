@@ -61,4 +61,26 @@ html, body {
 
 .center {
   text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-text {
+  text-align: center;
+}
+
+.header-text-sorted {
+  text-align: right;
+}
+
+.sort-button {
+  max-width: 30px;
+  min-width: 30px;
+  width: 30px;
+  margin-right: 30px;
 }
