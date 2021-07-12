@@ -45527,15 +45527,42 @@
         },
         "day": "2",
         "position": 5
+      },
+      {
+        "event": {
+          "name": "Gators ",
+          "year": 2019,
+          "day": "2"
+        },
+        "day": "2",
+        "position": 8
+      },
+      {
+        "event": {
+          "name": "Springs ",
+          "year": 2019,
+          "day": "1"
+        },
+        "day": "1",
+        "position": 7
+      },
+      {
+        "event": {
+          "name": "Springs ",
+          "year": 2019,
+          "day": "2"
+        },
+        "day": "2",
+        "position": 6
       }
     ],
     "yearsRaced": {},
     "numberOfWins": 0,
     "numberOfPodiums": 2,
-    "numberOfMains": 28,
+    "numberOfMains": 31,
     "seasonsRaced": 5,
     "winPercentage": "0.00",
-    "podiumPercentage": "7.14"
+    "podiumPercentage": "6.45"
   },
   {
     "id": "066e99c4-bd19-429f-9600-ea3495fe77f8",
@@ -47987,46 +48014,6 @@
     "numberOfWins": 0,
     "numberOfPodiums": 0,
     "numberOfMains": 2,
-    "seasonsRaced": 1,
-    "winPercentage": "0.00",
-    "podiumPercentage": "0.00"
-  },
-  {
-    "name": "Mikalyn Shaw",
-    "podiums": [],
-    "wins": [],
-    "mains": [
-      {
-        "event": {
-          "name": "Gators ",
-          "year": 2019,
-          "day": "2"
-        },
-        "day": "2",
-        "position": 8
-      },
-      {
-        "event": {
-          "name": "Springs ",
-          "year": 2019,
-          "day": "1"
-        },
-        "day": "1",
-        "position": 7
-      },
-      {
-        "event": {
-          "name": "Springs ",
-          "year": 2019,
-          "day": "2"
-        },
-        "day": "2",
-        "position": 6
-      }
-    ],
-    "numberOfWins": 0,
-    "numberOfPodiums": 0,
-    "numberOfMains": 3,
     "seasonsRaced": 1,
     "winPercentage": "0.00",
     "podiumPercentage": "0.00"
